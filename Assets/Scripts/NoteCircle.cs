@@ -47,6 +47,14 @@ public class NoteCircle : MonoBehaviour
         StartCoroutine(MoveNoteRoutine());
     }
 
+    public void InitializeCircle (float multiplier, AudioManager audioManager) {
+        this.audioManager = audioManager;
+        int currentTime = this.audioManager.GetMusicTimeInMS();
+        targetTime = Mathf.FloorToInt(currentTime + (audioManager.BeatDuration * 1000 * multiplier));
+        movementTime = (targetTime - currentTime) * 0.001f;
+        StartCoroutine(MoveNoteRoutine());
+    }
+
     IEnumerator MoveNoteRoutine() {
         float t = 0.0f;
         while (t < movementTime) {

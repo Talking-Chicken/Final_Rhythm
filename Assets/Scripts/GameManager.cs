@@ -44,13 +44,14 @@ public class GameManager : Singleton<GameManager>
         if (Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         
-
-        if (IsLeftTurn) {
-            leftTriggerLine.isCheckingNote = false;
-            rightTriggerLine.isCheckingNote = true;
-        } else {
-            leftTriggerLine.isCheckingNote = true;
-            rightTriggerLine.isCheckingNote = false;
+        if (leftTriggerLine != null) {
+            if (IsLeftTurn) {
+                leftTriggerLine.isCheckingNote = false;
+                rightTriggerLine.isCheckingNote = true;
+            } else {
+                leftTriggerLine.isCheckingNote = true;
+                rightTriggerLine.isCheckingNote = false;
+            }
         }
     }
 }

@@ -59,7 +59,6 @@ public class AudioManager : MonoBehaviour
                     break;
 
                 case AkCallbackType.AK_MusicSyncBeat:
-                    // GameManager.Instance.IsLeftTurn = !GameManager.Instance.IsLeftTurn;
                     break;
                 case AkCallbackType.AK_MusicSyncBar:
                     break;
