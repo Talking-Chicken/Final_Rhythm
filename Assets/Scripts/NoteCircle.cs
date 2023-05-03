@@ -33,9 +33,9 @@ public class NoteCircle : MonoBehaviour
     
     void Update()
     {
-        if (IsCheckingInput) {
-            CheckInput();
-        }
+        // if (IsCheckingInput) {
+        //     CheckInput();
+        // }
     }
 
     public void InitializeCircle(float multiplier, AkSegmentInfo segInfo, AudioManager ls) {
@@ -74,43 +74,66 @@ public class NoteCircle : MonoBehaviour
         }
         if (IsCheckingInput) {
             IsCheckingInput = false;
-            FadeOut(HitOrMiss.Miss);
+            FadeOut(PlayerManager.HitOrMiss.Miss);
         }
     }
 
-    void CheckInput() {
-        if (Input.GetKeyDown(KeyCode.L) && !isKeyPressed) {
-            HitOrMiss hm = HitOrMiss.Miss;
-            isKeyPressed = true;
-            endDrumEvent.Post(gameObject);
+    public PlayerManager.HitOrMiss CheckPerformance(float perfectWindow, float goodWindow) {
+        PlayerManager.HitOrMiss hm = PlayerManager.HitOrMiss.Miss;
+        endDrumEvent.Post(gameObject);
 
-            int currentTime = audioManager.GetMusicTimeInMS();
-            int offBy = targetTime - currentTime;
+        int currentTime = audioManager.GetMusicTimeInMS();
+        int offBy = targetTime - currentTime;
 
-            if (offBy >= 0) {
-                if (offBy <= perfectWindow)
-                    hm = HitOrMiss.Perfect;
-                else if (offBy <= goodWindow)
-                    hm = HitOrMiss.Good;
-                else
-                    hm = HitOrMiss.Okay;
-            }
-            else {
-                if (offBy > -perfectWindow)
-                    hm = HitOrMiss.Late;
-            }
-            // Debug.Log($"Target Time: {targetTime} || Input time: {currentTime} ||  OffBy: {offBy} || Hit or Miss: {hm}", gameObject);
-
-            IsCheckingInput = false;
-            FadeOut(hm);
+        if (offBy >= 0) {
+            if (offBy <= perfectWindow)
+                hm = PlayerManager.HitOrMiss.Perfect;
+            else if (offBy <= goodWindow)
+                hm = PlayerManager.HitOrMiss.Good;
+            else
+                hm = PlayerManager.HitOrMiss.Okay;
         }
+        else {
+            if (offBy > -perfectWindow)
+                hm = PlayerManager.HitOrMiss.Late;
+        }
+        FadeOut(hm);
+        return hm;
     }
+
+    // void CheckInput() {
+    //     if (Input.GetKeyDown(KeyCode.L) && !isKeyPressed) {
+    //         HitOrMiss hm = HitOrMiss.Miss;
+    //         isKeyPressed = true;
+    //         endDrumEvent.Post(gameObject);
+
+    //         int currentTime = audioManager.GetMusicTimeInMS();
+    //         int offBy = targetTime - currentTime;
+
+    //         if (offBy >= 0) {
+    //             if (offBy <= perfectWindow)
+    //                 hm = HitOrMiss.Perfect;
+    //             else if (offBy <= goodWindow)
+    //                 hm = HitOrMiss.Good;
+    //             else
+    //                 hm = HitOrMiss.Okay;
+    //         }
+    //         else {
+    //             if (offBy > -perfectWindow)
+    //                 hm = HitOrMiss.Late;
+    //         }
+    //         // Debug.Log($"Target Time: {targetTime} || Input time: {currentTime} ||  OffBy: {offBy} || Hit or Miss: {hm}", gameObject);
+
+    //         IsCheckingInput = false;
+    //         FadeOut(hm);
+    //     }
+    // }
 
     #region Animations
-    public void FadeOut(HitOrMiss hm) {
+    public void FadeOut(PlayerManager.HitOrMiss hm) {
         StartCoroutine(FadeOutRoutine(hm));
     }
-    IEnumerator FadeOutRoutine(HitOrMiss hm) {
+    IEnumerator FadeOutRoutine(PlayerManager.HitOrMiss hm) {
         noteSprite.color = successColors[(int)hm];
         float t = 0.0f;
         while (t < 0.5f) {

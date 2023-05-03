@@ -39,8 +39,6 @@ public class GameManager : Singleton<GameManager>
     #endregion
 
     void Update() {
-        
-
         if (Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         

@@ -6,6 +6,8 @@ using NaughtyAttributes;
 public class PlayerManager : MonoBehaviour
 {
     [ReadOnly, SerializeField, BoxGroup("Reference")]private AudioManager audioManager;
+    
+    
     public enum HitOrMiss { Perfect, Good, Okay, Miss, Late }
     [SerializeField, BoxGroup("Recieving")] int perfectWindow = 100;
     [SerializeField, BoxGroup("Recieving")] int goodWindow = 250;
@@ -16,6 +18,10 @@ public class PlayerManager : MonoBehaviour
     int targetTime;
     private SpriteRenderer noteSprite;
     [SerializeField, BoxGroup("Note")] private NoteCircle notePrefab;
+    private Queue<NoteCircle> playingNotes = new Queue<NoteCircle>();
+
+    //getters & setters
+    public Queue<NoteCircle> PlayingNotes {get=>playingNotes; set=>playingNotes = value;}
 
     #region FSM
     public enum PlayerStateType {Playing, Recieving}
@@ -69,7 +75,25 @@ public class PlayerManager : MonoBehaviour
     public void generateNote() {
         NoteCircle note = Instantiate(notePrefab, transform.position, Quaternion.identity);
         note.InitializeCircle(1, audioManager);
+        PlayingNotes.Enqueue(note);
+        Debug.Log(name + " playing notes now have " + PlayingNotes.Count);
+    }
+
+    /*respond the note of other player's playing notes*/
+    public void respondNote(NoteCircle note) {
+        //move based on how good player is
+        switch (note.CheckPerformance(perfectWindow, goodWindow)) {
+            case HitOrMiss.Perfect:
+                break;
+            case HitOrMiss.Good:
+                break;
+            default:
+                Debug.Log("no input");
+                break;
+        }
         
+        //dequeue from the queue
+        PlayingNotes.Dequeue();
     }
 
     void CheckInput() {
