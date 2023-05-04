@@ -35,13 +35,14 @@ public class AudioManager : MonoBehaviour
     }
     public bool IsMakingNote {get=>isMakingNote;set=>isMakingNote=value;}
     public int BarCount {get=>barCount;private set=>barCount=value;}
+    public Section CurrentSection {get=>currentSection; private set=>currentSection=value;}
 
     #region Setup
     private void Awake() {
         playingID = musicEvent.Post(gameObject, (uint)(AkCallbackType.AK_MusicSyncAll | AkCallbackType.AK_EnableGetMusicPlayPosition | AkCallbackType.AK_MIDIEvent), CallbackFunction);
 
         if (sections.Count > 0)
-            currentSection = sections[0];
+            CurrentSection = sections[0];
     }
     #endregion
 
@@ -146,7 +147,7 @@ public class AudioManager : MonoBehaviour
         BarCount = 0;
         if (currentSectionIndex < sections.Count-1) {
             currentSectionIndex++;
-            currentSection = sections[currentSectionIndex];
+            CurrentSection = sections[currentSectionIndex];
         }
     }
 }

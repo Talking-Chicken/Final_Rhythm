@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="SFX" Hash="{C9FC55DA-E59E-FDC6-FEF6-E7EB96D8B9C2}">
+		<SoundBank Id="2228651116" Type="User" Language="SFX" Hash="{7E935249-7C55-F563-C617-F5A2FF7319BE}">
 			<ShortName>Main_SoundBank</ShortName>
 			<Path>Main_SoundBank.bnk</Path>
 			<Media>
@@ -45,6 +45,10 @@
 				<File Id="595701591" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sol.wav</ShortName>
 					<CachePath>SFX/sol_C28F0F0C.wem</CachePath>
+				</File>
+				<File Id="813844014" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>me.wav</ShortName>
+					<CachePath>SFX/me_C28F0F0C.wem</CachePath>
 				</File>
 				<File Id="925131491" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>te.wav</ShortName>
@@ -81,7 +85,11 @@
 						<MediaRef Id="203997058"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2447410404" Name="Play_Me" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2447410404" Name="Play_Me" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="813844014"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2990131324" Name="Play_Sol" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
 					<MediaRefs>
 						<MediaRef Id="595701591"/>
@@ -95,5 +103,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{96169930-FCBA-A13D-65EE-93A9651C6D3A}</FileHash>
+	<FileHash>{D1006731-A6A3-E5A6-BCEB-675BB30DBDC8}</FileHash>
 </SoundBanksInfo>

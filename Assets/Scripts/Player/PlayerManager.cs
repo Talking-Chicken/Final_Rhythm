@@ -84,7 +84,7 @@ public class PlayerManager : MonoBehaviour
 
     public void generateNote() {
         NoteCircle note = Instantiate(notePrefab, transform.position, Quaternion.identity);
-        note.InitializeCircle(1, audioManager);
+        note.InitializeCircle(1, audioManager, audioManager.CurrentSection.PlayingMusicEvents[currentPlayingIndex], audioManager.CurrentSection.RecievingMusicEvents[currentPlayingIndex]);
         PlayingNotes.Enqueue(note);
         Debug.Log(name + " playing notes now have " + PlayingNotes.Count);
     }
@@ -104,6 +104,13 @@ public class PlayerManager : MonoBehaviour
         
         //dequeue from the queue
         PlayingNotes.Dequeue();
+    }
+
+    /*check if there's no more note need to play/recieve in this section*/
+    public bool HasReachedEnd() {
+        if (CurrentPlayingIndex < audioManager.CurrentSection.PlayingMusicEvents.Count)
+            return false;
+        return true;
     }
 
     void CheckInput() {

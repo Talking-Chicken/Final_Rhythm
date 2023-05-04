@@ -33,7 +33,7 @@ public class NoteCircle : MonoBehaviour
     {
         startPosition = transform.position;
         noteSprite = GetComponent<SpriteRenderer>();
-        drumEvent.Post(gameObject);
+        PlayingEvent.Post(gameObject);
     }
 
     
@@ -53,13 +53,15 @@ public class NoteCircle : MonoBehaviour
         StartCoroutine(MoveNoteRoutine());
     }
 
-    public void InitializeCircle (float multiplier, AudioManager audioManager) {
+    public void InitializeCircle (float multiplier, AudioManager audioManager, AK.Wwise.Event playingMusicEvent, AK.Wwise.Event recevingMusicEvent) {
         this.audioManager = audioManager;
         int currentTime = this.audioManager.GetMusicTimeInMS();
         targetTime = Mathf.FloorToInt(currentTime + (audioManager.BeatDuration * 1000 * multiplier));
         movementTime = (targetTime - currentTime) * 0.001f;
 
         //initialize music events
+        PlayingEvent = playingMusicEvent;
+        recievingEvent = recevingMusicEvent;
 
         StartCoroutine(MoveNoteRoutine());
     }

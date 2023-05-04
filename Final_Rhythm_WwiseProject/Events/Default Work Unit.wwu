@@ -25,7 +25,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_Me" ID="{E5B2DFF0-3C41-498D-8AD1-76161E49CF29}"/>
+				<Event Name="Play_Me" ID="{E5B2DFF0-3C41-498D-8AD1-76161E49CF29}">
+					<ChildrenList>
+						<Action Name="" ID="{D3B0493B-7F44-47C4-9207-3B205B5DE25B}" ShortID="439725623">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Me" ID="{85B7B139-D68A-42A7-AB7F-9B895D7C7044}" WorkUnitID="{64A32A85-1D48-4F0F-8608-5275FA27EBB4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 				<Event Name="Play_Fa" ID="{5B2D46AC-AB8D-42B8-B142-05F8D61D0D10}">
 					<ChildrenList>
 						<Action Name="" ID="{CC3E5FB3-DADA-4256-9089-F12BA911D282}" ShortID="11733995">

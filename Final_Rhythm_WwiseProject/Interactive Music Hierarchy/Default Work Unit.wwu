@@ -7,6 +7,11 @@
 					<PropertyList>
 						<Property Name="EndPosition" Type="Real64" Value="186721.224489796"/>
 						<Property Name="Tempo" Type="Real64" Value="126"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -80,7 +85,7 @@
 									<MusicCue Name="Exit Cue" ID="{86313C74-8AF0-4871-ADC9-F07BD634F395}">
 										<PropertyList>
 											<Property Name="CueType" Type="int16" Value="1"/>
-											<Property Name="TimeMs" Type="Real64" Value="1000"/>
+											<Property Name="TimeMs" Type="Real64" Value="186668.677709584"/>
 										</PropertyList>
 									</MusicCue>
 								</Local>

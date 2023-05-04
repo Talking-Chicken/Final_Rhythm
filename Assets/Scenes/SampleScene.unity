@@ -158,6 +158,7 @@ MonoBehaviour:
   goodWindow: 250
   okayWindow: 500
   notePrefab: {fileID: 2620764615725009798, guid: 6b9bf96715f12a844b99e51adb6b9433, type: 3}
+  currentPlayingIndex: 0
   enteringState: 1
 --- !u!212 &85815923
 SpriteRenderer:
@@ -280,6 +281,12 @@ MonoBehaviour:
   noteCirclePrefab: {fileID: 0}
   beatLinePrefab: {fileID: 0}
   startPosition: {fileID: 0}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  currentSection: {fileID: 0}
+  currentSectionIndex: 0
+  sections:
+  - {fileID: 11400000, guid: 052d33388ff97ca43b25f44f9cdd638d, type: 2}
 --- !u!114 &226495889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,4 +767,5 @@ MonoBehaviour:
   goodWindow: 250
   okayWindow: 500
   notePrefab: {fileID: 2620764615725009798, guid: 6b9bf96715f12a844b99e51adb6b9433, type: 3}
+  currentPlayingIndex: 0
   enteringState: 0
