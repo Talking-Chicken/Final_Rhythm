@@ -1,0 +1,19 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2027969859	Play_Te			\Default Work Unit\Play_Te	
+	2262856529	Play_Fa			\Default Work Unit\Play_Fa	
+	2262856537	Play_Fi			\Default Work Unit\Play_Fi	
+	2296411705	Play_Do			\Default Work Unit\Play_Do	
+	2447410404	Play_Me			\Default Work Unit\Play_Me	
+	2990131324	Play_Sol			\Default Work Unit\Play_Sol	
+	2992249738	Play_Do1			\Default Work Unit\Play_Do1	
+	3254665725	Play_Blues			\Default Work Unit\Play_Blues	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	12588617	Fa	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\fa_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\Fa		88344
+	139583985	Do1	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\do1_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\Do1		88344
+	203997058	Fi	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\fi_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\Fi		88344
+	441623894	Blues	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\blues back track_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Blues_Back_Track\Blues		32937768
+	595701591	Sol	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\sol_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\Sol		88344
+	925131491	Te	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\te_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\Te		88344
+	967623633	Do	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\do_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\Do		88344
+

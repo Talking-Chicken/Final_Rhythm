@@ -20,8 +20,11 @@ public class PlayerManager : MonoBehaviour
     [SerializeField, BoxGroup("Note")] private NoteCircle notePrefab;
     private Queue<NoteCircle> playingNotes = new Queue<NoteCircle>();
 
+    [ReadOnly, SerializeField, BoxGroup("Inside Section")] private int currentPlayingIndex;
+
     //getters & setters
     public Queue<NoteCircle> PlayingNotes {get=>playingNotes; set=>playingNotes = value;}
+    public int CurrentPlayingIndex {get=>currentPlayingIndex; set=>currentPlayingIndex=value;}
 
     #region FSM
     public enum PlayerStateType {Playing, Recieving}
@@ -52,6 +55,13 @@ public class PlayerManager : MonoBehaviour
         if (currentState != previousState) {
             ChangeState(previousState);
         }
+    }
+
+    public void ToggleState() {
+        if (currentState == statePlaying)
+            ChangeState(stateRecieving);
+        else
+            ChangeState(statePlaying);
     }
     #endregion
 

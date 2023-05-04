@@ -6,5 +6,7 @@ public class PlayerStateRecieving : PlayerStateBase
 {
     public override void EnterState(PlayerManager player) {}
     public override void UpdateState(PlayerManager player) {}
-    public override void LeaveState(PlayerManager player) {}
+    public override void LeaveState(PlayerManager player) {
+        player.CurrentPlayingIndex = 0;
+    }
 }

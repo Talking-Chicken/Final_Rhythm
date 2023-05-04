@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="Final_Rhythm_WwiseProject" GUID="{3DE0E771-EB2F-46A8-939F-7FF56E17CF81}" Generator="2022.1.2.8150"/>
+	<CacheRoot>../.cache</CacheRoot>
+	<Platforms>
+		<Platform Name="Mac" GUID="{C40AECBA-A4BF-46D2-8E13-6357DDA0EE74}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="Mac"/>
+		<Platform Name="Windows" GUID="{653026A0-7297-4B32-95A0-3C1B7B405D13}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="Windows"/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{CA0E72CB-CC64-41DC-930B-D880B13E7DE5}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{B2D53668-446A-17DC-33CE-71EB76940F7B}</FileHash>
+</ProjectInfo>

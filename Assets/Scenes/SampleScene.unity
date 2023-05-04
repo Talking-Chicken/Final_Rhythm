@@ -274,7 +274,7 @@ MonoBehaviour:
   musicEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: a9949ad1eff01444da6d31f078625218, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: b302479a645549544a2ba94151f4f28d, type: 2}
   beatDuration: 0
   barDuration: 0
   noteCirclePrefab: {fileID: 0}
@@ -372,12 +372,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c99a85066e612f48959e892e5a8be4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerList: f7e1664c
+  triggerList: ae8d9d44f7e1664c
   useOtherObject: 0
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 3bf3201bfb6be3a4d9df86b2697fd8fc, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: f4fb0b58feb4d2444ba7b84026e68e58, type: 2}
   decodeBank: 0
   loadAsynchronous: 0
   saveDecodedBank: 0

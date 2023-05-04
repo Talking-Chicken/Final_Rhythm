@@ -9,5 +9,7 @@ public class PlayerStatePlaying : PlayerStateBase
         if (Input.GetKeyDown(KeyCode.Q))
             player.generateNote();
     }
-    public override void LeaveState(PlayerManager player) {}
+    public override void LeaveState(PlayerManager player) {
+        player.CurrentPlayingIndex = 0;
+    }
 }

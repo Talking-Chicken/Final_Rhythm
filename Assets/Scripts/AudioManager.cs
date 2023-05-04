@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class AudioManager : MonoBehaviour
 {
@@ -22,14 +23,25 @@ public class AudioManager : MonoBehaviour
     public AkMusicSyncCallbackInfo MusicInfo;
 
     private bool isMakingNote = false;
+    private int barCount = 0;
+    [SerializeField, BoxGroup("Players")] private PlayerManager player1, player2;
+    [ReadOnly, SerializeField, Foldout("Sections")] private Section currentSection;
+    [ReadOnly, SerializeField, Foldout("Sections")] private int currentSectionIndex = 0;
+    [SerializeField, Foldout("Sections")] private List<Section> sections;
+
+    //getters & setters
     public float BeatDuration {
         get { return beatDuration; }
     }
     public bool IsMakingNote {get=>isMakingNote;set=>isMakingNote=value;}
+    public int BarCount {get=>barCount;private set=>barCount=value;}
 
     #region Setup
     private void Awake() {
         playingID = musicEvent.Post(gameObject, (uint)(AkCallbackType.AK_MusicSyncAll | AkCallbackType.AK_EnableGetMusicPlayPosition | AkCallbackType.AK_MIDIEvent), CallbackFunction);
+
+        if (sections.Count > 0)
+            currentSection = sections[0];
     }
     #endregion
 
@@ -47,7 +59,7 @@ public class AudioManager : MonoBehaviour
             switch (in_type) {
 
                 case AkCallbackType.AK_MusicSyncUserCue:
-                    CreateBeatLine(musicInfo);
+                    // CreateBeatLine(musicInfo);
                     // if (IsMakingNote) {
                     //     CreateCircleNote(musicInfo);
                     //     IsMakingNote = false;
@@ -61,6 +73,7 @@ public class AudioManager : MonoBehaviour
                 case AkCallbackType.AK_MusicSyncBeat:
                     break;
                 case AkCallbackType.AK_MusicSyncBar:
+                    BarCount++;
                     break;
             }
 
@@ -123,4 +136,17 @@ public class AudioManager : MonoBehaviour
     }
 
     #endregion
+
+    /*toggle between playing and recieving
+      reset bar count to zero
+      set current section to newest one*/
+    public void TogglePlayer() {
+        player1.ToggleState();
+        player2.ToggleState();
+        BarCount = 0;
+        if (currentSectionIndex < sections.Count-1) {
+            currentSectionIndex++;
+            currentSection = sections[currentSectionIndex];
+        }
+    }
 }

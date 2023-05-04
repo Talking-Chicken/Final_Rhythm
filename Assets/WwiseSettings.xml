@@ -11,7 +11,7 @@
   <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
   <WwiseInstallationPathMac />
   <WwiseInstallationPathWindows>D:\WWise\2022.1.2.8150</WwiseInstallationPathWindows>
-  <WwiseProjectPath>../../Rhythm_Game/Rhythm_Game_WwiseProject/Rhythm_Game_WwiseProject.wproj</WwiseProjectPath>
+  <WwiseProjectPath>../Final_Rhythm_WwiseProject/Final_Rhythm_WwiseProject.wproj</WwiseProjectPath>
   <UseWaapi>true</UseWaapi>
   <WaapiPort>8080</WaapiPort>
   <WaapiIP>127.0.0.1</WaapiIP>

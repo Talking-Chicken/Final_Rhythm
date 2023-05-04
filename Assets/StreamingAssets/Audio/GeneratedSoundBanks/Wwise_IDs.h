@@ -15,12 +15,14 @@ namespace AK
     {
         static const AkUniqueID PLAY = 1256202815U;
         static const AkUniqueID PLAY_01 = 3168847875U;
+        static const AkUniqueID PLAY_BLUES = 3254665725U;
         static const AkUniqueID PLAY_JAZZ = 3474269109U;
     } // namespace EVENTS
 
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
+        static const AkUniqueID FINAL_RYTHM = 1087450766U;
         static const AkUniqueID MAIN_SOUNDBANK = 2228651116U;
     } // namespace BANKS
 

@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3254665725	Play_Blues			\Default Work Unit\Play_Blues	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	441623894	Blues	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Mac\SFX\blues back track_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Blues_Back_Track\Blues		32937768
+
