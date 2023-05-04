@@ -9,17 +9,13 @@ public class NoteCircle : MonoBehaviour
     AudioManager audioManager;
     [SerializeField] private AK.Wwise.Event drumEvent, endDrumEvent;
     [ReadOnly, SerializeField, BoxGroup("Music Event")] private AK.Wwise.Event playingEvent, recievingEvent;
-    public enum HitOrMiss { Perfect, Good, Okay, Miss, Late }
     [SerializeField] Color[] successColors = new Color[5];
-    [SerializeField] int perfectWindow = 100;
-    [SerializeField] int goodWindow = 250;
-    [SerializeField] int okayWindow = 500;
     float movementTime = 1.0f; //这定义根本没用
     Vector3 movementSpeed = Vector3.zero;
     bool hasSetMovementSpeed = false;
     int targetTime;
-    [SerializeField] Vector2 leftDestination, rightDestination;
-    [SerializeField] private Vector2 startPosition;
+    [ReadOnly, SerializeField, BoxGroup("Movement")] private Vector2 targetPosition;
+    [ReadOnly, SerializeField, BoxGroup("Movement")] private Vector2 startPosition = Vector2.zero;
     private bool isCheckingInput = false;
     private SpriteRenderer noteSprite;
     private bool isKeyPressed = false;
@@ -31,11 +27,9 @@ public class NoteCircle : MonoBehaviour
 
     void Start()
     {
-        startPosition = transform.position;
         noteSprite = GetComponent<SpriteRenderer>();
         PlayingEvent.Post(gameObject);
     }
-
     
     void Update()
     {
@@ -53,11 +47,16 @@ public class NoteCircle : MonoBehaviour
         StartCoroutine(MoveNoteRoutine());
     }
 
-    public void InitializeCircle (float multiplier, AudioManager audioManager, AK.Wwise.Event playingMusicEvent, AK.Wwise.Event recevingMusicEvent) {
+    public void InitializeCircle (float multiplier, AudioManager audioManager, AK.Wwise.Event playingMusicEvent, AK.Wwise.Event recevingMusicEvent, 
+                                  Transform startPosition, Transform targetPosition) {
         this.audioManager = audioManager;
         int currentTime = this.audioManager.GetMusicTimeInMS();
-        targetTime = Mathf.FloorToInt(currentTime + (audioManager.BeatDuration * 1000 * multiplier));
+        targetTime = Mathf.FloorToInt(currentTime + (audioManager.BarDuration * 1000 * multiplier));
         movementTime = (targetTime - currentTime) * 0.001f;
+
+        //initialize positions
+        this.startPosition = startPosition.position;
+        this.targetPosition = targetPosition.position;
 
         //initialize music events
         PlayingEvent = playingMusicEvent;
@@ -70,14 +69,11 @@ public class NoteCircle : MonoBehaviour
         float t = 0.0f;
         while (t < movementTime) {
             Vector3 deltaPosition = Vector3.zero;
-            if (GameManager.Instance.IsLeftTurn) {
-                deltaPosition = Vector3.Lerp(startPosition, rightDestination, t / movementTime) - transform.position;
-            } else {
-                deltaPosition = Vector3.Lerp(startPosition, leftDestination, t / movementTime) - transform.position;
-            }
-            if (!hasSetMovementSpeed && t != 0.0f) {
+            deltaPosition = Vector3.Lerp(startPosition, targetPosition, t / movementTime) - transform.position;
+            if (!hasSetMovementSpeed && t > 0.0f) {
+                Vector3 fixedDeltaPosition = Vector3.Lerp(startPosition, targetPosition, Time.fixedDeltaTime / movementTime) - transform.position;
                 hasSetMovementSpeed = true;
-                movementSpeed = deltaPosition;
+                movementSpeed = fixedDeltaPosition;
             }
             transform.position += deltaPosition;
             t += Time.deltaTime;
@@ -103,6 +99,8 @@ public class NoteCircle : MonoBehaviour
                 hm = PlayerManager.HitOrMiss.Good;
             else
                 hm = PlayerManager.HitOrMiss.Okay;
+            
+            RecievingEvent.Post(gameObject);
         }
         else {
             if (offBy > -perfectWindow)

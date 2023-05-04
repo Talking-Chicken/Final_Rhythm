@@ -5,25 +5,27 @@ using NaughtyAttributes;
 
 public class PlayerManager : MonoBehaviour
 {
-    [ReadOnly, SerializeField, BoxGroup("Reference")]private AudioManager audioManager;
+    [ReadOnly, SerializeField, BoxGroup("Reference")] private AudioManager audioManager;
+    [SerializeField, BoxGroup("Reference")] private PlayerManager otherPlayer;
     
-    
+    [SerializeField, BoxGroup("Playing")] Transform startPosition;
+    [SerializeField, BoxGroup("Recieving")] Transform targetPosition;
+
     public enum HitOrMiss { Perfect, Good, Okay, Miss, Late }
     [SerializeField, BoxGroup("Recieving")] int perfectWindow = 100;
     [SerializeField, BoxGroup("Recieving")] int goodWindow = 250;
     [SerializeField, BoxGroup("Recieving")] int okayWindow = 500;
     float movementTime = 1.0f; //这定义根本没用
     Vector3 movementSpeed = Vector3.zero;
-    bool hasSetMovementSpeed = false;
-    int targetTime;
     private SpriteRenderer noteSprite;
     [SerializeField, BoxGroup("Note")] private NoteCircle notePrefab;
-    private Queue<NoteCircle> playingNotes = new Queue<NoteCircle>();
+    private Queue<NoteCircle> playingNotes = new Queue<NoteCircle>(), recievingNotes = new Queue<NoteCircle>();
 
     [ReadOnly, SerializeField, BoxGroup("Inside Section")] private int currentPlayingIndex;
 
     //getters & setters
     public Queue<NoteCircle> PlayingNotes {get=>playingNotes; set=>playingNotes = value;}
+    public Queue<NoteCircle> ReciveingNotes {get=>recievingNotes; set=>recievingNotes=value;}
     public int CurrentPlayingIndex {get=>currentPlayingIndex; set=>currentPlayingIndex=value;}
 
     #region FSM
@@ -83,14 +85,19 @@ public class PlayerManager : MonoBehaviour
     }
 
     public void generateNote() {
-        NoteCircle note = Instantiate(notePrefab, transform.position, Quaternion.identity);
-        note.InitializeCircle(1, audioManager, audioManager.CurrentSection.PlayingMusicEvents[currentPlayingIndex], audioManager.CurrentSection.RecievingMusicEvents[currentPlayingIndex]);
+        NoteCircle note = Instantiate(notePrefab, startPosition.position, Quaternion.identity);
+        note.InitializeCircle(1, audioManager, audioManager.CurrentSection.PlayingMusicEvents[currentPlayingIndex],
+                              audioManager.CurrentSection.RecievingMusicEvents[currentPlayingIndex],
+                              startPosition, targetPosition);
         PlayingNotes.Enqueue(note);
+        otherPlayer.recievingNotes.Enqueue(note);
         Debug.Log(name + " playing notes now have " + PlayingNotes.Count);
     }
 
     /*respond the note of other player's playing notes*/
     public void respondNote(NoteCircle note) {
+        if (note == null)
+            return;
         //move based on how good player is
         switch (note.CheckPerformance(perfectWindow, goodWindow)) {
             case HitOrMiss.Perfect:
@@ -101,9 +108,6 @@ public class PlayerManager : MonoBehaviour
                 Debug.Log("no input");
                 break;
         }
-        
-        //dequeue from the queue
-        PlayingNotes.Dequeue();
     }
 
     /*check if there's no more note need to play/recieve in this section*/
@@ -111,38 +115,6 @@ public class PlayerManager : MonoBehaviour
         if (CurrentPlayingIndex < audioManager.CurrentSection.PlayingMusicEvents.Count)
             return false;
         return true;
-    }
-
-    void CheckInput() {
-        if (Input.GetKeyDown(KeyCode.A)) {
-            HitOrMiss hm = HitOrMiss.Miss;
-
-            int currentTime = audioManager.GetMusicTimeInMS();
-            int offBy = targetTime - currentTime;
-
-            if (offBy >= 0) {
-                if (offBy <= perfectWindow) {
-                    hm = HitOrMiss.Perfect;
-                    GameManager.Instance.Score += 5;
-                } else if (offBy <= goodWindow) {
-                    hm = HitOrMiss.Good;
-                    GameManager.Instance.Score += 3;
-                } else {
-                    hm = HitOrMiss.Okay;
-                    GameManager.Instance.Score += 1;
-                }
-                Debug.Log("not miss");
-            }
-            else {
-                if (offBy > -perfectWindow) {
-                    hm = HitOrMiss.Late;
-                    Debug.Log("missed");
-                }
-            }
-            // Debug.Log($"Target Time: {targetTime} || Input time: {currentTime} ||  OffBy: {offBy} || Hit or Miss: {hm}", gameObject);
-
-            FadeOut(hm);
-        }
     }
 
     #region Animations

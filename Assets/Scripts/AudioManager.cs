@@ -30,9 +30,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField, Foldout("Sections")] private List<Section> sections;
 
     //getters & setters
-    public float BeatDuration {
-        get { return beatDuration; }
-    }
+    public float BeatDuration { get { return beatDuration; } }
+    public float BarDuration {get=>barDuration;}
     public bool IsMakingNote {get=>isMakingNote;set=>isMakingNote=value;}
     public int BarCount {get=>barCount;private set=>barCount=value;}
     public Section CurrentSection {get=>currentSection; private set=>currentSection=value;}
@@ -75,6 +74,9 @@ public class AudioManager : MonoBehaviour
                     break;
                 case AkCallbackType.AK_MusicSyncBar:
                     BarCount++;
+                    if (BarCount >= CurrentSection.TotalBarDuration) {
+                        TogglePlayer();
+                    }
                     break;
             }
 
