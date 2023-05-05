@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using MoreMountains.Feedbacks;
 
 public class AudioManager : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class AudioManager : MonoBehaviour
     [ReadOnly, SerializeField, Foldout("Sections")] private Section currentSection;
     [ReadOnly, SerializeField, Foldout("Sections")] private int currentSectionIndex = 0;
     [SerializeField, Foldout("Sections")] private List<Section> sections;
+    [SerializeField, Foldout("Feedbacks")] private MMF_Player playerBumpPlayer, textBumpPlayer;
 
     //getters & setters
     public float BeatDuration { get { return beatDuration; } }
@@ -79,6 +81,8 @@ public class AudioManager : MonoBehaviour
                     break;
 
                 case AkCallbackType.AK_MusicSyncBeat:
+                    playerBumpPlayer.PlayFeedbacks();
+                    textBumpPlayer.PlayFeedbacks();
                     break;
                 case AkCallbackType.AK_MusicSyncBar:
                     BarCount++;

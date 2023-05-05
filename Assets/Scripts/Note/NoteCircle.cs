@@ -12,7 +12,7 @@ public class NoteCircle : MonoBehaviour
     [SerializeField] Color[] successColors = new Color[5];
     float movementTime = 1.0f; //这定义根本没用
     Vector3 movementSpeed = Vector3.zero;
-    int targetTime;
+    float targetTime;
     private float existingTime = 0.0f;
     [ReadOnly, SerializeField, BoxGroup("Movement")] private Vector2 targetPosition;
     [ReadOnly, SerializeField, BoxGroup("Movement")] private Vector2 startPosition = Vector2.zero;
@@ -50,7 +50,8 @@ public class NoteCircle : MonoBehaviour
                                   Transform startPosition, Transform targetPosition, PlayerManager playerPlaying, PlayerManager playerReciving) {
         this.audioManager = audioManager;
         int currentTime = this.audioManager.GetMusicTimeInMS();
-        targetTime = Mathf.FloorToInt(currentTime + (audioManager.BarDuration * audioManager.CurrentSection.TotalBarDuration/2 * 1000 * multiplier));
+        // targetTime = Mathf.FloorToInt(currentTime + (audioManager.BarDuration * audioManager.CurrentSection.TotalBarDuration/2 * 1000 * multiplier));
+        targetTime = currentTime + (audioManager.BarDuration * audioManager.CurrentSection.TotalBarDuration/2 * 1000 * multiplier);
         movementTime = (targetTime - currentTime) * 0.001f;
 
         //initialize player reference
@@ -86,29 +87,36 @@ public class NoteCircle : MonoBehaviour
             FadeOut(PlayerManager.HitOrMiss.Miss);
     }
 
-    public PlayerManager.HitOrMiss CheckPerformance(float perfectWindow, float goodWindow) {
+    public PlayerManager.HitOrMiss CheckPerformance(float perfectWindow, float goodWindow, float okayWindow) {
         
 
         int currentTime = audioManager.GetMusicTimeInMS();
-        int offBy = targetTime - currentTime;
+        float offBy = targetTime - currentTime;
 
         if (offBy >= 0) {
-            if (offBy <= perfectWindow)
+            if (offBy <= perfectWindow) {
                 hitOrMiss = PlayerManager.HitOrMiss.Perfect;
-            else if (offBy <= goodWindow)
+                RecievingEvent.Post(gameObject);
+                FadeOut(hitOrMiss);
+            }
+            else if (offBy <= goodWindow) {
                 hitOrMiss = PlayerManager.HitOrMiss.Good;
-            else
+                RecievingEvent.Post(gameObject);
+                FadeOut(hitOrMiss);
+            }
+            else if (offBy <= okayWindow) {
                 hitOrMiss = PlayerManager.HitOrMiss.Okay;
-            
-            RecievingEvent.Post(gameObject);
+                RecievingEvent.Post(gameObject);
+                FadeOut(hitOrMiss);
+            }
         }
         else {
-            Debug.Log("Late");
             if (offBy > -perfectWindow) {
                 hitOrMiss = PlayerManager.HitOrMiss.Late;
             }
+            FadeOut(hitOrMiss);
         }
-        FadeOut(hitOrMiss);
+        
         return hitOrMiss;
     }
 
@@ -145,11 +153,8 @@ public class NoteCircle : MonoBehaviour
         StartCoroutine(FadeOutRoutine(hm));
     }
     IEnumerator FadeOutRoutine(PlayerManager.HitOrMiss hm) {
-        //if missed, dequeue
-        if (hm == PlayerManager.HitOrMiss.Miss) {
-            playerReciving.ReciveingNotes.Dequeue();
-            Debug.Log("missed");
-        }
+        // dequeue
+        playerReciving.ReciveingNotes.Dequeue();
         noteSprite.color = successColors[(int)hm];
         float t = 0.0f;
         while (t < 0.5f) {

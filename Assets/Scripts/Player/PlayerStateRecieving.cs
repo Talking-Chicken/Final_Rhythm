@@ -11,7 +11,7 @@ public class PlayerStateRecieving : PlayerStateBase
     public override void UpdateState(PlayerManager player) {
         if (Input.GetKeyDown(player.PlayKey)) {
             if (!player.HasRecievedEnd()) {
-                player.respondNote(player.ReciveingNotes.Dequeue());
+                player.respondNote(player.ReciveingNotes.Peek());
             }
         }
 

@@ -107,7 +107,7 @@ public class PlayerManager : MonoBehaviour
         if (note == null)
             return;
         //move based on how good player is
-        switch (note.CheckPerformance(perfectWindow, goodWindow)) {
+        switch (note.CheckPerformance(perfectWindow, goodWindow, okayWindow)) {
             case HitOrMiss.Perfect:
                 break;
             case HitOrMiss.Good:
