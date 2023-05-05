@@ -35,6 +35,14 @@ public class AudioManager : MonoBehaviour
     public bool IsMakingNote {get=>isMakingNote;set=>isMakingNote=value;}
     public int BarCount {get=>barCount;private set=>barCount=value;}
     public Section CurrentSection {get=>currentSection; private set=>currentSection=value;}
+    public Section NextSection {
+        get {
+            if (currentSectionIndex < sections.Count-1)
+                return sections[currentSectionIndex + 1];
+            else
+                return null;
+        }
+    }
 
     #region Setup
     private void Awake() {

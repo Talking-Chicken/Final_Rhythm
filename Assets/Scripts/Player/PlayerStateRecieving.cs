@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class PlayerStateRecieving : PlayerStateBase
 {
-    public override void EnterState(PlayerManager player) {}
+    public override void EnterState(PlayerManager player) {
+        player.PlayingNotes.Clear();
+    }
+
     public override void UpdateState(PlayerManager player) {
-        if (Input.GetKeyDown(KeyCode.P)) {
-            player.respondNote(player.ReciveingNotes.Dequeue());
+        if (Input.GetKeyDown(player.PlayKey)) {
+            if (!player.HasRecievedEnd()) {
+                player.respondNote(player.ReciveingNotes.Dequeue());
+            }
         }
+
+        player.ShowNextNoteCount();
     }
     public override void LeaveState(PlayerManager player) {
         player.CurrentPlayingIndex = 0;

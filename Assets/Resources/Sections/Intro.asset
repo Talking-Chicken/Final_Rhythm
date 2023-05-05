@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0804813b373424a95f79fcb1b3d24b, type: 3}
   m_Name: Intro
   m_EditorClassIdentifier: 
-  BarDuration: 4
+  TotalBarDuration: 4
   PlayingMusicEvents:
   - idInternal: 0
     valueGuidInternal: 

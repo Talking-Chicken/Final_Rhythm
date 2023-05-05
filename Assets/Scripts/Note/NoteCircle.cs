@@ -6,19 +6,20 @@ using NaughtyAttributes;
 
 public class NoteCircle : MonoBehaviour
 {
+    PlayerManager playerPlaying, playerReciving;
     AudioManager audioManager;
-    [SerializeField] private AK.Wwise.Event drumEvent, endDrumEvent;
     [ReadOnly, SerializeField, BoxGroup("Music Event")] private AK.Wwise.Event playingEvent, recievingEvent;
     [SerializeField] Color[] successColors = new Color[5];
     float movementTime = 1.0f; //这定义根本没用
     Vector3 movementSpeed = Vector3.zero;
-    bool hasSetMovementSpeed = false;
     int targetTime;
+    private float existingTime = 0.0f;
     [ReadOnly, SerializeField, BoxGroup("Movement")] private Vector2 targetPosition;
     [ReadOnly, SerializeField, BoxGroup("Movement")] private Vector2 startPosition = Vector2.zero;
     private bool isCheckingInput = false;
     private SpriteRenderer noteSprite;
-    private bool isKeyPressed = false;
+
+    private PlayerManager.HitOrMiss hitOrMiss = PlayerManager.HitOrMiss.Miss;
 
     //getters & setters
     public bool IsCheckingInput {get=>isCheckingInput;set=>isCheckingInput=value;}
@@ -33,26 +34,28 @@ public class NoteCircle : MonoBehaviour
     
     void Update()
     {
-        // if (IsCheckingInput) {
-        //     CheckInput();
-        // }
+        existingTime += Time.deltaTime;
     }
 
     public void InitializeCircle(float multiplier, AkSegmentInfo segInfo, AudioManager ls) {
         audioManager = ls;
         int currentTime = audioManager.GetMusicTimeInMS();
-        targetTime = Mathf.FloorToInt(currentTime + (ls.BeatDuration * 1000 * multiplier));
+        targetTime = Mathf.FloorToInt(currentTime + (ls.BarDuration * 1000 * multiplier));
         movementTime = (targetTime - currentTime) * 0.001f;
         // Debug.Log($"Current time: {currentTime} || Target time: {targetTime}", gameObject);
         StartCoroutine(MoveNoteRoutine());
     }
 
     public void InitializeCircle (float multiplier, AudioManager audioManager, AK.Wwise.Event playingMusicEvent, AK.Wwise.Event recevingMusicEvent, 
-                                  Transform startPosition, Transform targetPosition) {
+                                  Transform startPosition, Transform targetPosition, PlayerManager playerPlaying, PlayerManager playerReciving) {
         this.audioManager = audioManager;
         int currentTime = this.audioManager.GetMusicTimeInMS();
-        targetTime = Mathf.FloorToInt(currentTime + (audioManager.BarDuration * 1000 * multiplier));
+        targetTime = Mathf.FloorToInt(currentTime + (audioManager.BarDuration * audioManager.CurrentSection.TotalBarDuration/2 * 1000 * multiplier));
         movementTime = (targetTime - currentTime) * 0.001f;
+
+        //initialize player reference
+        this.playerPlaying = playerPlaying;
+        this.playerReciving = playerReciving;
 
         //initialize positions
         this.startPosition = startPosition.position;
@@ -66,48 +69,47 @@ public class NoteCircle : MonoBehaviour
     }
 
     IEnumerator MoveNoteRoutine() {
-        float t = 0.0f;
-        while (t < movementTime) {
-            Vector3 deltaPosition = Vector3.zero;
-            deltaPosition = Vector3.Lerp(startPosition, targetPosition, t / movementTime) - transform.position;
-            if (!hasSetMovementSpeed && t > 0.0f) {
-                Vector3 fixedDeltaPosition = Vector3.Lerp(startPosition, targetPosition, Time.fixedDeltaTime / movementTime) - transform.position;
-                hasSetMovementSpeed = true;
-                movementSpeed = fixedDeltaPosition;
-            }
-            transform.position += deltaPosition;
-            t += Time.deltaTime;
+        while (existingTime < movementTime) {
+            // Vector3 deltaPosition = Vector3.zero;
+            // deltaPosition = Vector3.Lerp(startPosition, targetPosition, t / movementTime) - transform.position;
+            // if (!hasSetMovementSpeed && t > 0.0f) {
+            //     Vector3 fixedDeltaPosition = Vector3.Lerp(startPosition, targetPosition, Time.fixedDeltaTime / movementTime) - transform.position;
+            //     hasSetMovementSpeed = true;
+            //     movementSpeed = fixedDeltaPosition;
+            // }
+            // transform.position += deltaPosition;
+            transform.position = new Vector2(Mathf.LerpUnclamped(startPosition.x, targetPosition.x, existingTime/movementTime), startPosition.y);   //startPosition, targetPosition, t/)
+            
             yield return null;
         }
-        if (IsCheckingInput) {
-            IsCheckingInput = false;
+        if (hitOrMiss == PlayerManager.HitOrMiss.Miss)
             FadeOut(PlayerManager.HitOrMiss.Miss);
-        }
     }
 
     public PlayerManager.HitOrMiss CheckPerformance(float perfectWindow, float goodWindow) {
-        PlayerManager.HitOrMiss hm = PlayerManager.HitOrMiss.Miss;
-        endDrumEvent.Post(gameObject);
+        
 
         int currentTime = audioManager.GetMusicTimeInMS();
         int offBy = targetTime - currentTime;
 
         if (offBy >= 0) {
             if (offBy <= perfectWindow)
-                hm = PlayerManager.HitOrMiss.Perfect;
+                hitOrMiss = PlayerManager.HitOrMiss.Perfect;
             else if (offBy <= goodWindow)
-                hm = PlayerManager.HitOrMiss.Good;
+                hitOrMiss = PlayerManager.HitOrMiss.Good;
             else
-                hm = PlayerManager.HitOrMiss.Okay;
+                hitOrMiss = PlayerManager.HitOrMiss.Okay;
             
             RecievingEvent.Post(gameObject);
         }
         else {
-            if (offBy > -perfectWindow)
-                hm = PlayerManager.HitOrMiss.Late;
+            Debug.Log("Late");
+            if (offBy > -perfectWindow) {
+                hitOrMiss = PlayerManager.HitOrMiss.Late;
+            }
         }
-        FadeOut(hm);
-        return hm;
+        FadeOut(hitOrMiss);
+        return hitOrMiss;
     }
 
     // void CheckInput() {
@@ -143,14 +145,24 @@ public class NoteCircle : MonoBehaviour
         StartCoroutine(FadeOutRoutine(hm));
     }
     IEnumerator FadeOutRoutine(PlayerManager.HitOrMiss hm) {
+        //if missed, dequeue
+        if (hm == PlayerManager.HitOrMiss.Miss) {
+            playerReciving.ReciveingNotes.Dequeue();
+            Debug.Log("missed");
+        }
         noteSprite.color = successColors[(int)hm];
         float t = 0.0f;
         while (t < 0.5f) {
+            //move the note
+            transform.position = new Vector2(Mathf.LerpUnclamped(startPosition.x, targetPosition.x, existingTime/movementTime), startPosition.y);
+
             t += Time.deltaTime;
             transform.position += movementSpeed;
             noteSprite.color = Color.Lerp(successColors[(int)hm], Color.clear, t);
             yield return null;
         }
+
+        
         Destroy(gameObject);
     }
     #endregion

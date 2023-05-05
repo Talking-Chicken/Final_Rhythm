@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using TMPro;
 
 public class PlayerManager : MonoBehaviour
 {
     [ReadOnly, SerializeField, BoxGroup("Reference")] private AudioManager audioManager;
     [SerializeField, BoxGroup("Reference")] private PlayerManager otherPlayer;
     
+    [SerializeField, BoxGroup("Both")] KeyCode playKey;
     [SerializeField, BoxGroup("Playing")] Transform startPosition;
+    [SerializeField, BoxGroup("Playing")] TextMeshProUGUI playingCountText;
     [SerializeField, BoxGroup("Recieving")] Transform targetPosition;
 
     public enum HitOrMiss { Perfect, Good, Okay, Miss, Late }
@@ -24,6 +27,7 @@ public class PlayerManager : MonoBehaviour
     [ReadOnly, SerializeField, BoxGroup("Inside Section")] private int currentPlayingIndex;
 
     //getters & setters
+    public KeyCode PlayKey {get=>playKey;}
     public Queue<NoteCircle> PlayingNotes {get=>playingNotes; set=>playingNotes = value;}
     public Queue<NoteCircle> ReciveingNotes {get=>recievingNotes; set=>recievingNotes=value;}
     public int CurrentPlayingIndex {get=>currentPlayingIndex; set=>currentPlayingIndex=value;}
@@ -31,6 +35,7 @@ public class PlayerManager : MonoBehaviour
     #region FSM
     public enum PlayerStateType {Playing, Recieving}
     [SerializeField, BoxGroup("FSM")] private PlayerStateType enteringState;
+    [ReadOnly, SerializeField, BoxGroup("FSM")] private PlayerStateType currentStateType;
     private PlayerStateBase currentState;
     public PlayerStateBase previousState;
     public PlayerStatePlaying statePlaying = new PlayerStatePlaying();
@@ -82,16 +87,19 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         currentState.UpdateState(this);
+        if (currentState == statePlaying)
+            currentStateType = PlayerStateType.Playing;
+        else
+            currentStateType = PlayerStateType.Recieving;
     }
 
     public void generateNote() {
         NoteCircle note = Instantiate(notePrefab, startPosition.position, Quaternion.identity);
         note.InitializeCircle(1, audioManager, audioManager.CurrentSection.PlayingMusicEvents[currentPlayingIndex],
                               audioManager.CurrentSection.RecievingMusicEvents[currentPlayingIndex],
-                              startPosition, targetPosition);
+                              startPosition, targetPosition, playerPlaying: this, playerReciving: otherPlayer);
         PlayingNotes.Enqueue(note);
         otherPlayer.recievingNotes.Enqueue(note);
-        Debug.Log(name + " playing notes now have " + PlayingNotes.Count);
     }
 
     /*respond the note of other player's playing notes*/
@@ -110,27 +118,30 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    /*check if there's no more note need to play/recieve in this section*/
+    /*check if there's no more note need to play/recieve in this section
+      and if time allows player to play*/
     public bool HasReachedEnd() {
-        if (CurrentPlayingIndex < audioManager.CurrentSection.PlayingMusicEvents.Count)
+        if (audioManager.CurrentSection.PlayingMusicEvents.Count > 0 
+            && CurrentPlayingIndex < audioManager.CurrentSection.PlayingMusicEvents.Count
+            && audioManager.BarCount < audioManager.CurrentSection.TotalBarDuration/2)
             return false;
         return true;
     }
 
-    #region Animations
-    public void FadeOut(HitOrMiss hm) {
-        StartCoroutine(FadeOutRoutine(hm));
+    public bool HasRecievedEnd() {
+        if (ReciveingNotes.Count <= 0)
+            return true;
+        return false;
     }
-    IEnumerator FadeOutRoutine(HitOrMiss hm) {
-        noteSprite.color = Color.blue;
-        float t = 0.0f;
-        while (t < 0.5f) {
-            t += Time.deltaTime;
-            transform.position += movementSpeed;
-            noteSprite.color = Color.Lerp(Color.blue, Color.clear, t);
-            yield return null;
-        }
-        Destroy(gameObject);
+
+    public void ShowPlayingNoteCount() {
+        playingCountText.text = audioManager.CurrentSection.PlayingMusicEvents.Count - playingNotes.Count + "";
     }
-    #endregion
+
+    public void ShowNextNoteCount() {
+        if (audioManager.NextSection != null)
+            playingCountText.text = audioManager.NextSection.PlayingMusicEvents.Count + "";
+        else
+            playingCountText.text = "0";
+    }
 }

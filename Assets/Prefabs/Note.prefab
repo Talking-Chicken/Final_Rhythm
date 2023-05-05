@@ -97,23 +97,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722f79c678790764c92d1bff0aeb763b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drumEvent:
+  playingEvent:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
-  endDrumEvent:
+  recievingEvent:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   successColors:
-  - {r: 0.8113208, g: 0.52429694, b: 0.52429694, a: 1}
+  - {r: 0.2937523, g: 0.8396226, b: 0.24951048, a: 1}
   - {r: 0.8070158, g: 0.8490566, b: 0.244304, a: 1}
-  - {r: 0.11311853, g: 0.5849056, b: 0.56584746, a: 1}
-  - {r: 0.22828409, g: 0.509434, b: 0.2755629, a: 1}
-  - {r: 0.24852276, g: 1, b: 0, a: 1}
-  perfectWindow: 100
-  goodWindow: 250
-  okayWindow: 500
-  leftDestination: {x: 0, y: 0}
-  rightDestination: {x: 0, y: 0}
+  - {r: 0.8584906, g: 0.5663817, b: 0.3037113, a: 1}
+  - {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
+  - {r: 0.5754717, g: 0, b: 0.1442307, a: 1}
+  targetPosition: {x: 0, y: 0}
   startPosition: {x: 0, y: 0}

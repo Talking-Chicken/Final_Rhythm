@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class PlayerStatePlaying : PlayerStateBase
 {
-    public override void EnterState(PlayerManager player) {}
+    public override void EnterState(PlayerManager player) {
+    }
     public override void UpdateState(PlayerManager player) {
-        if (Input.GetKeyDown(KeyCode.Q)) {
+        if (Input.GetKeyDown(player.PlayKey)) {
             if (!player.HasReachedEnd()) {
                 player.generateNote();
                 player.CurrentPlayingIndex++;
             }
         }
+
+        player.ShowPlayingNoteCount();
     }
     public override void LeaveState(PlayerManager player) {
         player.CurrentPlayingIndex = 0;
