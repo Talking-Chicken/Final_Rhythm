@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: c9bbb8aac142a643ba66460766e618dd
     GuidInternal: 
-    m_lastTime: -8585184357815061370
+    m_lastTime: -8585183324859794135
     List:
     - name: Main_SoundBank
       guid: a3ee423c575f124f92f3e8b2f3c552dc
@@ -94,8 +94,42 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 5c759d62a6658b4faf793fbd79d4dc1a
     GuidInternal: 
-    m_lastTime: -8585184243286145938
+    m_lastTime: -8585183324859814137
     List:
+    - name: Play_Ab
+      guid: cf55f90e6db6654cae542887ece99956
+      id: 2380299863
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 5c759d62a6658b4faf793fbd79d4dc1a
+      - ElementName: Play_Ab
+        ObjectType: 3
+        guid: cf55f90e6db6654cae542887ece99956
+      Path: Events\Default Work Unit\Play_Ab
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Bb
+      guid: 0f3339f5cde4384f84d336610a1ffe86
+      id: 2329966878
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 5c759d62a6658b4faf793fbd79d4dc1a
+      - ElementName: Play_Bb
+        ObjectType: 3
+        guid: 0f3339f5cde4384f84d336610a1ffe86
+      Path: Events\Default Work Unit\Play_Bb
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Blues
       guid: 2774028286c5ab4eb79ce6bc257138fc
       id: 3254665725
@@ -110,6 +144,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: 2774028286c5ab4eb79ce6bc257138fc
       Path: Events\Default Work Unit\Play_Blues
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_C
+      guid: 1237f05d0cd15147980a07d448aab0d2
+      id: 1774091797
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 5c759d62a6658b4faf793fbd79d4dc1a
+      - ElementName: Play_C
+        ObjectType: 3
+        guid: 1237f05d0cd15147980a07d448aab0d2
+      Path: Events\Default Work Unit\Play_C
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -147,6 +198,40 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Do2
+      guid: 7877593da4be21448c46a0146423bb0e
+      id: 2992249737
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 5c759d62a6658b4faf793fbd79d4dc1a
+      - ElementName: Play_Do2
+        ObjectType: 3
+        guid: 7877593da4be21448c46a0146423bb0e
+      Path: Events\Default Work Unit\Play_Do2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_F
+      guid: 07cf37947489b945b24a4985a4909340
+      id: 1774091792
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 5c759d62a6658b4faf793fbd79d4dc1a
+      - ElementName: Play_F
+        ObjectType: 3
+        guid: 07cf37947489b945b24a4985a4909340
+      Path: Events\Default Work Unit\Play_F
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Fa
       guid: ac462d5b8dabb842b14205f8d61d0d10
       id: 2262856529
@@ -161,6 +246,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: ac462d5b8dabb842b14205f8d61d0d10
       Path: Events\Default Work Unit\Play_Fa
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Fa1
+      guid: bf09502e899e824391dd5881741add16
+      id: 2757068978
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 5c759d62a6658b4faf793fbd79d4dc1a
+      - ElementName: Play_Fa1
+        ObjectType: 3
+        guid: bf09502e899e824391dd5881741add16
+      Path: Events\Default Work Unit\Play_Fa1
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -181,6 +283,40 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Fi1
+      guid: 73072797fcf39046861a5f8804649873
+      id: 2891289898
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 5c759d62a6658b4faf793fbd79d4dc1a
+      - ElementName: Play_Fi1
+        ObjectType: 3
+        guid: 73072797fcf39046861a5f8804649873
+      Path: Events\Default Work Unit\Play_Fi1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_G
+      guid: 383e33591e66494aa5f21005039fdecd
+      id: 1774091793
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 5c759d62a6658b4faf793fbd79d4dc1a
+      - ElementName: Play_G
+        ObjectType: 3
+        guid: 383e33591e66494aa5f21005039fdecd
+      Path: Events\Default Work Unit\Play_G
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Me
       guid: f0dfb2e5413c8d498ad176161e49cf29
       id: 2447410404
@@ -195,6 +331,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: f0dfb2e5413c8d498ad176161e49cf29
       Path: Events\Default Work Unit\Play_Me
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Me1
+      guid: 92d617956b62f94a900bcb13ece92a07
+      id: 2289119965
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 5c759d62a6658b4faf793fbd79d4dc1a
+      - ElementName: Play_Me1
+        ObjectType: 3
+        guid: 92d617956b62f94a900bcb13ece92a07
+      Path: Events\Default Work Unit\Play_Me1
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -215,6 +368,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Sol1
+      guid: 06723ea762e4ae4db1256195eaa8a32e
+      id: 217488133
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 5c759d62a6658b4faf793fbd79d4dc1a
+      - ElementName: Play_Sol1
+        ObjectType: 3
+        guid: 06723ea762e4ae4db1256195eaa8a32e
+      Path: Events\Default Work Unit\Play_Sol1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Te
       guid: 9d92c31eb2ba6340b11edf9d8aef68af
       id: 2027969859
@@ -229,6 +399,40 @@ MonoBehaviour:
         ObjectType: 3
         guid: 9d92c31eb2ba6340b11edf9d8aef68af
       Path: Events\Default Work Unit\Play_Te
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Te_1
+      guid: c5552b108013e442b692c65cccc34532
+      id: 3657280483
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 5c759d62a6658b4faf793fbd79d4dc1a
+      - ElementName: Play_Te_1
+        ObjectType: 3
+        guid: c5552b108013e442b692c65cccc34532
+      Path: Events\Default Work Unit\Play_Te_1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Te1
+      guid: 3bbae0926e09df4395c3e539c3d0e2d2
+      id: 2352140360
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 5c759d62a6658b4faf793fbd79d4dc1a
+      - ElementName: Play_Te1
+        ObjectType: 3
+        guid: 3bbae0926e09df4395c3e539c3d0e2d2
+      Path: Events\Default Work Unit\Play_Te1
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1

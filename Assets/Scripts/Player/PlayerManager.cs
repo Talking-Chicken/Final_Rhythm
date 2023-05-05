@@ -25,6 +25,8 @@ public class PlayerManager : MonoBehaviour
     private Queue<NoteCircle> playingNotes = new Queue<NoteCircle>(), recievingNotes = new Queue<NoteCircle>();
 
     [ReadOnly, SerializeField, BoxGroup("Inside Section")] private int currentPlayingIndex;
+    public SpriteRenderer MySprite;
+    [SerializeField, BoxGroup("Color")] public Color PlayingColor, RecievingColor;
 
     //getters & setters
     public KeyCode PlayKey {get=>playKey;}
@@ -76,6 +78,7 @@ public class PlayerManager : MonoBehaviour
     {
         //set reference
         audioManager = FindObjectOfType<AudioManager>();
+        MySprite = GetComponent<SpriteRenderer>();
 
         if (enteringState == PlayerStateType.Playing)
             ChangeState(statePlaying);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerStatePlaying : PlayerStateBase
 {
     public override void EnterState(PlayerManager player) {
+        player.MySprite.color = player.PlayingColor;
     }
     public override void UpdateState(PlayerManager player) {
         if (Input.GetKeyDown(player.PlayKey)) {

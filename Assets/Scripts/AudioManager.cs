@@ -29,7 +29,8 @@ public class AudioManager : MonoBehaviour
     [ReadOnly, SerializeField, Foldout("Sections")] private Section currentSection;
     [ReadOnly, SerializeField, Foldout("Sections")] private int currentSectionIndex = 0;
     [SerializeField, Foldout("Sections")] private List<Section> sections;
-    [SerializeField, Foldout("Feedbacks")] private MMF_Player playerBumpPlayer, textBumpPlayer;
+    [SerializeField, Foldout("Feedbacks")] private MMF_Player playerBumpPlayer, textBumpPlayer, LeftCameraZoomIn, LeftCameraZoomOut, BarZoomIn, BarZoomOut, RightCameraZoomIn, RightCameraZoomOut;
+    private bool zoomedLeft = false, zoomedRight = false, barZoomed = false;
 
     //getters & setters
     public float BeatDuration { get { return beatDuration; } }
@@ -83,6 +84,36 @@ public class AudioManager : MonoBehaviour
                 case AkCallbackType.AK_MusicSyncBeat:
                     playerBumpPlayer.PlayFeedbacks();
                     textBumpPlayer.PlayFeedbacks();
+
+                    if (CurrentSection.ZoomRightIn && !zoomedRight) {
+                        RightCameraZoomIn.PlayFeedbacks();
+                        if (!barZoomed) {
+                            BarZoomIn.PlayFeedbacks();
+                            barZoomed = true;
+                        }
+                        zoomedRight = true;
+                    } else if (CurrentSection.ZoomLeftIn && !zoomedLeft) {
+                        LeftCameraZoomIn.PlayFeedbacks();
+                        if (!barZoomed) {
+                            BarZoomIn.PlayFeedbacks();
+                            barZoomed = true;
+                        }
+                        zoomedLeft = true;
+                    } else if (CurrentSection.ZoomRightOut && zoomedRight) {
+                        RightCameraZoomOut.PlayFeedbacks();
+                        if (barZoomed) {
+                            BarZoomOut.PlayFeedbacks();
+                            barZoomed = false;
+                        }
+                        zoomedRight = false;
+                    } else if (CurrentSection.ZoomLeftOut && zoomedLeft) {
+                        LeftCameraZoomOut.PlayFeedbacks();
+                        if (barZoomed) {
+                            BarZoomOut.PlayFeedbacks();
+                            barZoomed = false;
+                        }
+                        zoomedLeft = false;
+                    }
                     break;
                 case AkCallbackType.AK_MusicSyncBar:
                     BarCount++;

@@ -10,9 +10,21 @@
 						<ObjectRef Name="Play_Fa" ID="{5B2D46AC-AB8D-42B8-B142-05F8D61D0D10}" WorkUnitID="{629D755C-65A6-4F8B-AF79-3FBD79D4DC1A}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Sol" ID="{11D427C9-5CA6-42E3-B2CE-D634552CA4C2}" WorkUnitID="{629D755C-65A6-4F8B-AF79-3FBD79D4DC1A}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Do1" ID="{9AA21691-366C-436D-A5DC-E6B5C385284C}" WorkUnitID="{629D755C-65A6-4F8B-AF79-3FBD79D4DC1A}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="sol1" ID="{B7C120E3-4DC9-4419-9F36-1997225FEC79}" WorkUnitID="{64A32A85-1D48-4F0F-8608-5275FA27EBB4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="do2" ID="{43065CE2-22B0-4547-8B64-16E4E40F3083}" WorkUnitID="{64A32A85-1D48-4F0F-8608-5275FA27EBB4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_F" ID="{9437CF07-8974-45B9-B24A-4985A4909340}" WorkUnitID="{629D755C-65A6-4F8B-AF79-3FBD79D4DC1A}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_C" ID="{5DF03712-D10C-4751-980A-07D448AAB0D2}" WorkUnitID="{629D755C-65A6-4F8B-AF79-3FBD79D4DC1A}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Do" ID="{8B779640-12AB-47EB-BE96-6F0E29CA4C79}" WorkUnitID="{629D755C-65A6-4F8B-AF79-3FBD79D4DC1A}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="te1" ID="{0073C73E-0EB3-4811-82F7-1A48EBF5A45C}" WorkUnitID="{64A32A85-1D48-4F0F-8608-5275FA27EBB4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Me" ID="{E5B2DFF0-3C41-498D-8AD1-76161E49CF29}" WorkUnitID="{629D755C-65A6-4F8B-AF79-3FBD79D4DC1A}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_G" ID="{59333E38-661E-4A49-A5F2-1005039FDECD}" WorkUnitID="{629D755C-65A6-4F8B-AF79-3FBD79D4DC1A}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Ab" ID="{0EF955CF-B66D-4C65-AE54-2887ECE99956}" WorkUnitID="{629D755C-65A6-4F8B-AF79-3FBD79D4DC1A}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="me1" ID="{60617C49-0785-4DD6-B5D7-C486B48676A6}" WorkUnitID="{64A32A85-1D48-4F0F-8608-5275FA27EBB4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="fi1" ID="{85096A21-45B9-4E43-8CF4-2F423DF47736}" WorkUnitID="{64A32A85-1D48-4F0F-8608-5275FA27EBB4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Blues" ID="{82027427-C586-4EAB-B79C-E6BC257138FC}" WorkUnitID="{629D755C-65A6-4F8B-AF79-3FBD79D4DC1A}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="fa1" ID="{9FC3AAB3-7EFC-4F0E-BCE3-345E107CA17A}" WorkUnitID="{64A32A85-1D48-4F0F-8608-5275FA27EBB4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Bb" ID="{F539330F-E4CD-4F38-84D3-36610A1FFE86}" WorkUnitID="{629D755C-65A6-4F8B-AF79-3FBD79D4DC1A}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="te-1" ID="{4792DFF8-683D-4FF5-B774-273E21D63C4B}" WorkUnitID="{64A32A85-1D48-4F0F-8608-5275FA27EBB4}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

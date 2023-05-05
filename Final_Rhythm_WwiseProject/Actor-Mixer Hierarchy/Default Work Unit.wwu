@@ -193,6 +193,160 @@
 								<ActiveSource Name="do1" ID="{511E1A6A-765C-4282-A2B9-545958A54040}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="do2" ID="{43065CE2-22B0-4547-8B64-16E4E40F3083}" ShortID="81943088">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E1D6F853-7F87-4098-8324-C430E892B621}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBB72813-2A51-4587-9C6A-A49438B88F3A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="do2" ID="{68BA6EB0-232C-4EFF-B89A-20314CA61ACB}">
+									<Language>SFX</Language>
+									<AudioFile>do2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="279679599"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="do2" ID="{68BA6EB0-232C-4EFF-B89A-20314CA61ACB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="fa1" ID="{9FC3AAB3-7EFC-4F0E-BCE3-345E107CA17A}" ShortID="612466255">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E1D6F853-7F87-4098-8324-C430E892B621}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBB72813-2A51-4587-9C6A-A49438B88F3A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="fa1" ID="{9AC4AD7D-9DC8-4A42-A2F1-9A648C1CDC5B}">
+									<Language>SFX</Language>
+									<AudioFile>fa1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="914523744"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="fa1" ID="{9AC4AD7D-9DC8-4A42-A2F1-9A648C1CDC5B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="fi1" ID="{85096A21-45B9-4E43-8CF4-2F423DF47736}" ShortID="611820492">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E1D6F853-7F87-4098-8324-C430E892B621}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBB72813-2A51-4587-9C6A-A49438B88F3A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="fi1" ID="{F5D0EEA4-3A70-412A-A16B-9F24D9D29540}">
+									<Language>SFX</Language>
+									<AudioFile>fi1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="959623811"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="fi1" ID="{F5D0EEA4-3A70-412A-A16B-9F24D9D29540}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="me1" ID="{60617C49-0785-4DD6-B5D7-C486B48676A6}" ShortID="406561052">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E1D6F853-7F87-4098-8324-C430E892B621}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBB72813-2A51-4587-9C6A-A49438B88F3A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="me1" ID="{ADA92210-C3B8-4D42-901A-6A942F700624}">
+									<Language>SFX</Language>
+									<AudioFile>me1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="552359085"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="me1" ID="{ADA92210-C3B8-4D42-901A-6A942F700624}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sol1" ID="{B7C120E3-4DC9-4419-9F36-1997225FEC79}" ShortID="131071464">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E1D6F853-7F87-4098-8324-C430E892B621}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBB72813-2A51-4587-9C6A-A49438B88F3A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sol1" ID="{7D1B76F7-BEAF-4831-BEE6-3E0D80B97176}">
+									<Language>SFX</Language>
+									<AudioFile>sol1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="465873305"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sol1" ID="{7D1B76F7-BEAF-4831-BEE6-3E0D80B97176}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="te1" ID="{0073C73E-0EB3-4811-82F7-1A48EBF5A45C}" ShortID="731630799">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E1D6F853-7F87-4098-8324-C430E892B621}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBB72813-2A51-4587-9C6A-A49438B88F3A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="te1" ID="{80717D7E-E2AE-4909-9821-FC4FE1488853}">
+									<Language>SFX</Language>
+									<AudioFile>te1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="494032044"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="te1" ID="{80717D7E-E2AE-4909-9821-FC4FE1488853}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="te-1" ID="{4792DFF8-683D-4FF5-B774-273E21D63C4B}" ShortID="371598632">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E1D6F853-7F87-4098-8324-C430E892B621}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBB72813-2A51-4587-9C6A-A49438B88F3A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="te-1" ID="{CA72E171-7C81-4DF5-8B66-AA4639EBC5A6}">
+									<Language>SFX</Language>
+									<AudioFile>te-1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1063508376"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="te-1" ID="{CA72E171-7C81-4DF5-8B66-AA4639EBC5A6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Chord" ID="{8262349D-81AF-40FF-A74E-1D28EC155129}" ShortID="322420450">

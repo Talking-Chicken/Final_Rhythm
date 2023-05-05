@@ -1,20 +1,44 @@
 Event	ID	Name			Wwise Object Path	Notes
-	2027969859	Play_Te			\Default Work Unit\Play_Te	
-	2262856529	Play_Fa			\Default Work Unit\Play_Fa	
-	2262856537	Play_Fi			\Default Work Unit\Play_Fi	
-	2296411705	Play_Do			\Default Work Unit\Play_Do	
-	2447410404	Play_Me			\Default Work Unit\Play_Me	
-	2990131324	Play_Sol			\Default Work Unit\Play_Sol	
-	2992249738	Play_Do1			\Default Work Unit\Play_Do1	
-	3254665725	Play_Blues			\Default Work Unit\Play_Blues	
+	217488133	Play_Sol1			\Default Work Unit\Notes\Play_Sol1	
+	1774091792	Play_F			\Default Work Unit\Chords\Play_F	
+	1774091793	Play_G			\Default Work Unit\Chords\Play_G	
+	1774091797	Play_C			\Default Work Unit\Chords\Play_C	
+	2027969859	Play_Te			\Default Work Unit\Notes\Play_Te	
+	2262856529	Play_Fa			\Default Work Unit\Notes\Play_Fa	
+	2262856537	Play_Fi			\Default Work Unit\Notes\Play_Fi	
+	2289119965	Play_Me1			\Default Work Unit\Notes\Play_Me1	
+	2296411705	Play_Do			\Default Work Unit\Notes\Play_Do	
+	2329966878	Play_Bb			\Default Work Unit\Chords\Play_Bb	
+	2352140360	Play_Te1			\Default Work Unit\Notes\Play_Te1	
+	2380299863	Play_Ab			\Default Work Unit\Chords\Play_Ab	
+	2447410404	Play_Me			\Default Work Unit\Notes\Play_Me	
+	2757068978	Play_Fa1			\Default Work Unit\Notes\Play_Fa1	
+	2891289898	Play_Fi1			\Default Work Unit\Notes\Play_Fi1	
+	2990131324	Play_Sol			\Default Work Unit\Notes\Play_Sol	
+	2992249737	Play_Do2			\Default Work Unit\Notes\Play_Do2	
+	2992249738	Play_Do1			\Default Work Unit\Notes\Play_Do1	
+	3254665725	Play_Blues			\Default Work Unit\Notes\Play_Blues	
+	3657280483	Play_Te_1			\Default Work Unit\Notes\Play_Te_1	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	12588617	Fa	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\fa_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\Fa		88344
 	139583985	Do1	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\do1_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\Do1		88344
+	166789782	C	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\C_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Chord\C		88344
 	203997058	Fi	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\fi_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\Fi		88344
+	279679599	do2	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\do2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\do2		168144
+	353196376	G	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\G_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Chord\G		88344
 	441623894	Blues	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\blues back track_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Blues_Back_Track\Blues		32937768
+	465873305	sol1	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\sol1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\sol1		168144
+	494032044	te1	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\te1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\te1		168144
+	552359085	me1	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\me1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\me1		168144
 	595701591	Sol	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\sol_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\Sol		88344
+	746286207	Bb	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\Bb_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Chord\Bb		88344
 	813844014	Me	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\me_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\Me		88344
+	821634271	F	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\F_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Chord\F		88344
+	839641971	Ab	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\Ab_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Chord\Ab		88344
+	914523744	fa1	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\fa1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\fa1		168144
 	925131491	Te	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\te_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\Te		88344
+	959623811	fi1	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\fi1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\fi1		168144
 	967623633	Do	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\do_C28F0F0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\Do		88344
+	1063508376	te-1	F:\NYU homework\Music And Gameplay\Final_Rhythm\Final_Rhythm_WwiseProject\.cache\Windows\SFX\te-1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Note\te-1		168144
 

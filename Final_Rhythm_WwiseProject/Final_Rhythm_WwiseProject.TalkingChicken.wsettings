@@ -3,14 +3,26 @@
 	<UserProjectSettingsInfo>
 		<UserProjectSettings Name="" ID="{1DE83111-F3F0-46BC-BD59-85407412ECE6}">
 			<PropertyList>
+				<Property Name="Event Action List\{0EF955CF-B66D-4C65-AE54-2887ECE99956}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{102B55C5-1380-42E4-B692-C65CCCC34532}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{11D427C9-5CA6-42E3-B2CE-D634552CA4C2}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{1EC3929D-BAB2-4063-B11E-DF9D8AEF68AF}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{2E5009BF-9E89-4382-91DD-5881741ADD16}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{3D597778-BEA4-4421-8C46-A0146423BB0E}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{59333E38-661E-4A49-A5F2-1005039FDECD}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{5B2D46AC-AB8D-42B8-B142-05F8D61D0D10}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{5DF03712-D10C-4751-980A-07D448AAB0D2}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{6E195385-CBDE-4131-9EE1-CF5090A19BE1}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{82027427-C586-4EAB-B79C-E6BC257138FC}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{8B779640-12AB-47EB-BE96-6F0E29CA4C79}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{92E0BA3B-096E-43DF-95C3-E539C3D0E2D2}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{9437CF07-8974-45B9-B24A-4985A4909340}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{9517D692-626B-4AF9-900B-CB13ECE92A07}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{97270773-F3FC-4690-861A-5F8804649873}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{9AA21691-366C-436D-A5DC-E6B5C385284C}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{A73E7206-E462-4DAE-B125-6195EAA8A32E}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{E5B2DFF0-3C41-498D-8AD1-76161E49CF29}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{F539330F-E4CD-4F38-84D3-36610A1FFE86}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="EventView\FilterMode2" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
@@ -33,7 +45,7 @@
 				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value="o+5CPFdfEk+S8+iy88VS3A=="/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}"/>
 				<Property Name="HardwareController\{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}\x64_ActiveGroups_v2" Type="string" Value="FyBgaN/yDky3WklIshD0SwEAr29lAAAAwKRfgf1/AABInfyjawEAAAAAAABrAQAAwKRfgf1/AACkk5F2/X8AAOBja7JrAQAAAAAAAGsBAAAIAAAAAAAAABjir29lAAAA8AKmdv1/AAAPBKZ2/X8AAPACpnb9fwAAwKRfgf1/AADApF+B/X8AAEid/KNrAQAAAQAAAOulsMjQ6bNJk1toSDo+aD0BAK9vZQAAAMCkX4H9fwAASJ38o2sBAAAAAAAAawEAAMCkX4H9fwAApJORdv1/AADgY2uyawEAAAAAAABrAQAACAAAAAAAAAAY4q9vZQAAAPACpnb9fwAADwSmdv1/AADwAqZ2/X8AAMCkX4H9fwAAwKRfgf1/AABInfyjawEAAAEAAAA="/>
-				<Property Name="Interactive Music\x64_{62034D0A-7184-4F21-B6B2-C695DE1AA78B} - SegmentEditorZoomInfo" Type="string" Value="5gpGWnzAsT8AAAAAAADwPwAAAAAA6HxAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
+				<Property Name="Interactive Music\x64_{62034D0A-7184-4F21-B6B2-C695DE1AA78B} - SegmentEditorZoomInfo" Type="string" Value="mpmZmZmZuT8AAAAAAADwPwAAAAAA6HxAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 				<Property Name="MeterView\MeterMode1" Type="int32" Value="1"/>
 				<Property Name="MeterView\MeterMode1Viewpoint0" Type="int32" Value="1"/>

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerStateRecieving : PlayerStateBase
 {
     public override void EnterState(PlayerManager player) {
+        player.MySprite.color = player.RecievingColor;
         player.PlayingNotes.Clear();
     }
 

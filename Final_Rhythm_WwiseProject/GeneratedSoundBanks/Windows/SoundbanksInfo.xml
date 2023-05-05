@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="SFX" Hash="{7E935249-7C55-F563-C617-F5A2FF7319BE}">
+		<SoundBank Id="2228651116" Type="User" Language="SFX" Hash="{658DF79C-AC8D-59A1-2531-12CD010F1BF7}">
 			<ShortName>Main_SoundBank</ShortName>
 			<Path>Main_SoundBank.bnk</Path>
 			<Media>
@@ -34,35 +34,98 @@
 					<ShortName>do1.wav</ShortName>
 					<CachePath>SFX/do1_C28F0F0C.wem</CachePath>
 				</File>
+				<File Id="166789782" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>C.wav</ShortName>
+					<CachePath>SFX/C_C28F0F0C.wem</CachePath>
+				</File>
 				<File Id="203997058" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>fi.wav</ShortName>
 					<CachePath>SFX/fi_C28F0F0C.wem</CachePath>
+				</File>
+				<File Id="279679599" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>do2.wav</ShortName>
+					<CachePath>SFX/do2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="353196376" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>G.wav</ShortName>
+					<CachePath>SFX/G_C28F0F0C.wem</CachePath>
 				</File>
 				<File Id="441623894" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>blues back track.wav</ShortName>
 					<CachePath>SFX/blues back track_D79FB2B7.wem</CachePath>
 				</File>
+				<File Id="465873305" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sol1.wav</ShortName>
+					<CachePath>SFX/sol1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="494032044" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>te1.wav</ShortName>
+					<CachePath>SFX/te1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="552359085" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>me1.wav</ShortName>
+					<CachePath>SFX/me1_10C4C929.wem</CachePath>
+				</File>
 				<File Id="595701591" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sol.wav</ShortName>
 					<CachePath>SFX/sol_C28F0F0C.wem</CachePath>
+				</File>
+				<File Id="746286207" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Bb.wav</ShortName>
+					<CachePath>SFX/Bb_C28F0F0C.wem</CachePath>
 				</File>
 				<File Id="813844014" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>me.wav</ShortName>
 					<CachePath>SFX/me_C28F0F0C.wem</CachePath>
 				</File>
+				<File Id="821634271" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>F.wav</ShortName>
+					<CachePath>SFX/F_C28F0F0C.wem</CachePath>
+				</File>
+				<File Id="839641971" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ab.wav</ShortName>
+					<CachePath>SFX/Ab_C28F0F0C.wem</CachePath>
+				</File>
+				<File Id="914523744" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>fa1.wav</ShortName>
+					<CachePath>SFX/fa1_10C4C929.wem</CachePath>
+				</File>
 				<File Id="925131491" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>te.wav</ShortName>
 					<CachePath>SFX/te_C28F0F0C.wem</CachePath>
+				</File>
+				<File Id="959623811" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>fi1.wav</ShortName>
+					<CachePath>SFX/fi1_10C4C929.wem</CachePath>
 				</File>
 				<File Id="967623633" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>do.wav</ShortName>
 					<CachePath>SFX/do_C28F0F0C.wem</CachePath>
 				</File>
+				<File Id="1063508376" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>te-1.wav</ShortName>
+					<CachePath>SFX/te-1_10C4C929.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
+				<Event Id="2380299863" Name="Play_Ab" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="839641971"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2329966878" Name="Play_Bb" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="746286207"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3254665725" Name="Play_Blues" DurationType="OneShot" DurationMin="186.72122" DurationMax="186.72122">
 					<MediaRefs>
 						<MediaRef Id="441623894"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1774091797" Name="Play_C" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="166789782"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2296411705" Name="Play_Do" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
@@ -75,9 +138,24 @@
 						<MediaRef Id="139583985"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2992249737" Name="Play_Do2" DurationType="OneShot" DurationMin="0.95238096" DurationMax="0.95238096">
+					<MediaRefs>
+						<MediaRef Id="279679599"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1774091792" Name="Play_F" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="821634271"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2262856529" Name="Play_Fa" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
 					<MediaRefs>
 						<MediaRef Id="12588617"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2757068978" Name="Play_Fa1" DurationType="OneShot" DurationMin="0.95238096" DurationMax="0.95238096">
+					<MediaRefs>
+						<MediaRef Id="914523744"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2262856537" Name="Play_Fi" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
@@ -85,9 +163,24 @@
 						<MediaRef Id="203997058"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2891289898" Name="Play_Fi1" DurationType="OneShot" DurationMin="0.95238096" DurationMax="0.95238096">
+					<MediaRefs>
+						<MediaRef Id="959623811"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1774091793" Name="Play_G" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="353196376"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2447410404" Name="Play_Me" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
 					<MediaRefs>
 						<MediaRef Id="813844014"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2289119965" Name="Play_Me1" DurationType="OneShot" DurationMin="0.95238096" DurationMax="0.95238096">
+					<MediaRefs>
+						<MediaRef Id="552359085"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2990131324" Name="Play_Sol" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
@@ -95,13 +188,28 @@
 						<MediaRef Id="595701591"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="217488133" Name="Play_Sol1" DurationType="OneShot" DurationMin="0.95238096" DurationMax="0.95238096">
+					<MediaRefs>
+						<MediaRef Id="465873305"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2027969859" Name="Play_Te" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
 					<MediaRefs>
 						<MediaRef Id="925131491"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2352140360" Name="Play_Te1" DurationType="OneShot" DurationMin="0.95238096" DurationMax="0.95238096">
+					<MediaRefs>
+						<MediaRef Id="494032044"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3657280483" Name="Play_Te_1" DurationType="OneShot" DurationMin="0.95238096" DurationMax="0.95238096">
+					<MediaRefs>
+						<MediaRef Id="1063508376"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D1006731-A6A3-E5A6-BCEB-675BB30DBDC8}</FileHash>
+	<FileHash>{F9D9C63D-B267-CEFB-92AE-AAAA41E46E32}</FileHash>
 </SoundBanksInfo>
