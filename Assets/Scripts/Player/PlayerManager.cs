@@ -12,6 +12,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField, BoxGroup("Both")] KeyCode playKey;
     [SerializeField, BoxGroup("Playing")] Transform startPosition;
     [SerializeField, BoxGroup("Playing")] TextMeshProUGUI playingCountText;
+    [ReadOnly, SerializeField, BoxGroup("Playing")] float timeBetweenNotes = 0.0f;
+    [SerializeField, BoxGroup("Playing")] float MinimalTimeBetweenNotes;
     [SerializeField, BoxGroup("Recieving")] Transform targetPosition;
 
     public enum HitOrMiss { Perfect, Good, Okay, Miss, Late }
@@ -94,6 +96,8 @@ public class PlayerManager : MonoBehaviour
             currentStateType = PlayerStateType.Playing;
         else
             currentStateType = PlayerStateType.Recieving;
+        
+        timeBetweenNotes += Time.deltaTime;
     }
 
     public void generateNote() {
@@ -103,6 +107,8 @@ public class PlayerManager : MonoBehaviour
                               startPosition, targetPosition, playerPlaying: this, playerReciving: otherPlayer);
         PlayingNotes.Enqueue(note);
         otherPlayer.recievingNotes.Enqueue(note);
+
+        timeBetweenNotes = 0.0f;
     }
 
     /*respond the note of other player's playing notes*/
@@ -119,6 +125,12 @@ public class PlayerManager : MonoBehaviour
                 Debug.Log("no input");
                 break;
         }
+    }
+
+    public bool IsStillInCD() {
+        if (timeBetweenNotes < MinimalTimeBetweenNotes)
+            return true;
+        return false;
     }
 
     /*check if there's no more note need to play/recieve in this section

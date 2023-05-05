@@ -159,6 +159,8 @@ MonoBehaviour:
   playKey: 13
   startPosition: {fileID: 2106967817}
   playingCountText: {fileID: 913205684}
+  timeBetweenNotes: 0
+  MinimalTimeBetweenNotes: 0.1
   targetPosition: {fileID: 2086476454}
   perfectWindow: 100
   goodWindow: 200
@@ -4917,6 +4919,8 @@ MonoBehaviour:
   playKey: 32
   startPosition: {fileID: 1624105466}
   playingCountText: {fileID: 1458296897}
+  timeBetweenNotes: 0
+  MinimalTimeBetweenNotes: 0
   targetPosition: {fileID: 843590306}
   perfectWindow: 100
   goodWindow: 200

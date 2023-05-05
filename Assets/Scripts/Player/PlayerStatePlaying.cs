@@ -9,7 +9,7 @@ public class PlayerStatePlaying : PlayerStateBase
     }
     public override void UpdateState(PlayerManager player) {
         if (Input.GetKeyDown(player.PlayKey)) {
-            if (!player.HasReachedEnd()) {
+            if (!player.HasReachedEnd() && !player.IsStillInCD()) {
                 player.generateNote();
                 player.CurrentPlayingIndex++;
             }
