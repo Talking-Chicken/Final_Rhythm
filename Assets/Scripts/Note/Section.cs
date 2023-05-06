@@ -9,5 +9,5 @@ public class Section : ScriptableObject
     [Tooltip("total bar duration for both player to finish this section")] public int TotalBarDuration;
     public List<AK.Wwise.Event> PlayingMusicEvents;
     public List<AK.Wwise.Event> RecievingMusicEvents;
-    public bool ZoomRightIn, ZoomLeftOut, ZoomRightOut, ZoomLeftIn;
+    public bool ZoomRightIn, ZoomLeftOut, ZoomRightOut, ZoomLeftIn, LinesIn, LinesOut;
 }

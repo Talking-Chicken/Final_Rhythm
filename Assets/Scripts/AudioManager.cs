@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 using MoreMountains.Feedbacks;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -29,8 +30,9 @@ public class AudioManager : MonoBehaviour
     [ReadOnly, SerializeField, Foldout("Sections")] private Section currentSection;
     [ReadOnly, SerializeField, Foldout("Sections")] private int currentSectionIndex = 0;
     [SerializeField, Foldout("Sections")] private List<Section> sections;
-    [SerializeField, Foldout("Feedbacks")] private MMF_Player playerBumpPlayer, textBumpPlayer, LeftCameraZoomIn, LeftCameraZoomOut, BarZoomIn, BarZoomOut, RightCameraZoomIn, RightCameraZoomOut;
-    private bool zoomedLeft = false, zoomedRight = false, barZoomed = false;
+    [SerializeField, Foldout("Feedbacks")] private MMF_Player playerBumpPlayer, textBumpPlayer, LeftCameraZoomIn, LeftCameraZoomOut, 
+                                                              BarZoomIn, BarZoomOut, RightCameraZoomIn, RightCameraZoomOut, LinesMoveIn, LinesMoveOut;
+    private bool zoomedLeft = false, zoomedRight = false, barZoomed = false, linesIn = false;
 
     //getters & setters
     public float BeatDuration { get { return beatDuration; } }
@@ -59,6 +61,11 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         
+    }
+
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
     }
 
     void CallbackFunction(object in_cookie, AkCallbackType in_type, AkCallbackInfo in_info) {
@@ -113,6 +120,14 @@ public class AudioManager : MonoBehaviour
                             barZoomed = false;
                         }
                         zoomedLeft = false;
+                    }
+
+                    if (CurrentSection.LinesIn && !linesIn) {
+                        LinesMoveIn.PlayFeedbacks();
+                        linesIn = true;
+                    } else if (CurrentSection.LinesOut && linesIn) {
+                        LinesMoveOut.PlayFeedbacks();
+                        linesIn = false;
                     }
                     break;
                 case AkCallbackType.AK_MusicSyncBar:
