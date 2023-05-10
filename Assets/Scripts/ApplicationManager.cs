@@ -7,8 +7,9 @@ using UnityEngine.SceneManagement;
 public class ApplicationManager : MMSingleton<ApplicationManager>
 {
     void Start() {
-        
+        Screen.fullScreen = false;    
     }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
